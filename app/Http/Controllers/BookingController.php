@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Clients;
+use App\Models\clients;
 use App\Models\Current;
 
 class BookingController extends Controller
@@ -20,7 +20,7 @@ class BookingController extends Controller
             'email' => 'required|email'
         ]);
 
-        Clients::create([
+        clients::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
