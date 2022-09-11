@@ -48,7 +48,7 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
      
-        return redirect()->back()->with('message', 'your message,here'); 
+        return redirect()->route('login') ->with('message', 'Done.');
         // Auth::login($user);
 
         // return redirect(RouteServiceProvider::HOME);
