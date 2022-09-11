@@ -35,13 +35,13 @@ class BookingController extends Controller
 
 
     //...............................................................
-    public function shift(Clients $client){
+    public function shift(clients $client){
 
-        $client =Clients::get();
+        $client =clients::get();
 
        foreach($client as $key => $value)   {
         $id = $value->id;
-        Clients::destroy($id);
+        clients::destroy($id);
         Current::create([
             'name' => $value->name,
             'phone' => $value->phone,

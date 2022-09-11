@@ -18,7 +18,7 @@ class DashboardController extends Controller{
 
         public function index(){
             
-                return view('userdash');
+                return view('admindash');
             }
     public function myprofile()
     {
