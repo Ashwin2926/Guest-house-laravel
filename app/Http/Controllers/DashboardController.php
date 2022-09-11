@@ -2,34 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {   
 
-        $this->validate($request, [
-            'email' => 'required',
-            'password' => 'required',
-        ]);
-
-        if(Auth::attempt(['email' => $request->email, 'password' => $request->password]))
-        {
-            if(Auth::check() && Auth::user()->role->id == 1)
+        
+            if(Auth::check() && Auth::user()->hasRole('admin'))
             {
-                return redirect()->route('admindash');
+                return view('admindash');
             }
-            elseif (Auth::check() && Auth::user()->role->id == 2)
+            elseif (Auth::check() && Auth::user()->hasRole('user'))
             {
-                return redirect()->route('userdash');
+                return view('userdash');
             }
             
-        }else{
-            return redirect()->route('login')
-            ->with('error','Email and Password are wrong.');
-        }
+        
     }
 
     
