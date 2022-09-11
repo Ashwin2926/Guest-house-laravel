@@ -41,13 +41,14 @@
             
                  </div>
            
-               
+                
+                @if (Auth::user()->hasRole('admin') )
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard.register')" :active="request()->routeIs('dashboard.register')">
                         {{ __('Register new user') }}
                     </x-nav-link>
                 </div>
-              
+                @endif
                              
 
                 </div>
