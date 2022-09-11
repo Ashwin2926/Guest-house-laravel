@@ -1,0 +1,1 @@
+<img src="{{ asset('/assets/img') }}/logo.jpg" style=" border-radius: 50%" width="80" height="180" alt="" class="img-fluid"></a>
