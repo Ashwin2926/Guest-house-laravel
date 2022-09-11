@@ -46,11 +46,7 @@ class BookingController extends Controller
             'name' => $value->name,
             'phone' => $value->phone,
             'guest_list' => $value->guest_list,
-            'guest_list' => $value->guest_list,
-            'check_in' => $value->null,
-            'check_out' => $value->null,
-            'room' => $value->null,
-            'items' => $value->null,
+           
 
         ]);
              
