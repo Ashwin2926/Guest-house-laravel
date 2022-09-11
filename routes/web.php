@@ -26,10 +26,9 @@ Route::get('display', 'App\Http\Controllers\DashboardController@disp')->name('di
 Route::view('welcome', 'welcome')->name('welcome');
 
 //auth route for both 
-// Route::group(['middleware' => ['auth']], function() { 
-//     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
-// });
-Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
+Route::group(['middleware' => ['auth']], function() { 
+    Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
+});
 //profile
 Route::view('profile', 'profile')->name('profile');
 Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])
