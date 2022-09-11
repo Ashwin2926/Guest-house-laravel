@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    public function login(Request $request)
+    public function index(Request $request)
     {   
 
         $this->validate($request, [
