@@ -38,10 +38,10 @@ class BookingController extends Controller
     public function shift(clients $client){
 
         $client =clients::get();
-        $date=" ";
-        $date1=" ";
-        $room1="";
-        $item1="";
+        $date=" null";
+        $date1="null ";
+        $room1="null";
+        $item1="null";
        foreach($client as $key => $value)   {
         $id = $value->id;
         clients::destroy($id);
