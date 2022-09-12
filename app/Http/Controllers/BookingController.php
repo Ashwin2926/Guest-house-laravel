@@ -38,7 +38,10 @@ class BookingController extends Controller
     public function shift(clients $client){
 
         $client =clients::get();
-
+        $date=" ";
+        $date1=" ";
+        $room1="";
+        $item1="";
        foreach($client as $key => $value)   {
         $id = $value->id;
         clients::destroy($id);
@@ -46,9 +49,12 @@ class BookingController extends Controller
             'name' => $value->name,
             'phone' => $value->phone,
             'guest_list' => $value->guest_list,
-            'check_in' => $value->check_in,
-            'check_out' => $value->check_out,
-            ]);
+            'check_in' => $value->$date1,
+            'check_out' => $value->$date,
+            'room' => $value->$room1,
+            'items' => $value->$item1,
+
+        ]);
              
 
         return redirect()->route('book.index') ->with('message', 'Done.');
