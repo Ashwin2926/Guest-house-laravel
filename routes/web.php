@@ -34,10 +34,11 @@ Route::view('profile', 'profile')->name('profile');
 Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])
     ->name('profile.update');
 
-// for registering user admin
-Route::group(['middleware' => ['auth', 'role:admin']], function() { 
-    Route::get('/dashboard/register', 'App\Http\Controllers\DashboardController@register')->name('dashboard.register');
-});
+// // for registering user admin
+// Route::group(['middleware' => ['auth', 'role:admin']], function() { 
+//     Route::get('/dashboard/register', 'App\Http\Controllers\DashboardController@register')->name('dashboard.register');
+// });
+Route::get('/dashboard/register', 'App\Http\Controllers\DashboardController@register')->name('dashboard.register');
 
 //more nav links
 Route::view('clients/all', 'clients/all')->name('all');
