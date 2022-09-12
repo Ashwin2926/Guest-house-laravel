@@ -18,10 +18,10 @@ class CurrentTable extends Migration
             $table->string('name');
             $table->string('phone');
             $table->string('guest_list');
-            $table->string('check_in')->default(null);
-            $table->string('check_out')->default(null);
-            $table->string('room')->default(null);
-            $table->string('items')->default(null);
+            $table->string('check_in');
+            $table->string('check_out');
+            $table->string('room');
+            $table->string('items');
             $table->timestamps();
         });
     }

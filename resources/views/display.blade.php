@@ -14,11 +14,11 @@
 <body>
    
   
-    <div class="alert alert-success">
+    <div style="align-items: center" class="alert alert-success">
         @if (session('success'))
-    <p>{{ session('success') }}</p>
-    @endif
-      </div>
+        <p>{{ session('success') }}</p>
+        @endif
+ </div>
 
     <script type="text/javascript">
         window.setTimeout(function() {
