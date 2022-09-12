@@ -48,8 +48,7 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
      
-        return redirect()->route('display')->with('success', 'Booked Successfully! We will get back to you within 24hrs');
-        // Auth::login($user);
+       Auth::login($user);
 
         // return redirect(RouteServiceProvider::HOME);
     }
