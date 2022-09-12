@@ -8,15 +8,15 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function index(Role $role)
     {   
 
         
-            if(Auth::check() && Auth::user()->hasRole='admin')
+            if(Auth::check() && Auth::user()->$role ='admin')
             {
                 return view('admindash');
             }
-            elseif (Auth::check() && Auth::user()->hasRole='user')
+            elseif (Auth::check() && Auth::user()->$role='user')
             {
                 return view('userdash');
             }
